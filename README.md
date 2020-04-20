@@ -1,13 +1,22 @@
-# NPM Package Template
-Own set-up for a clean npm package written in TypeScript.
+# bytebufferjs
+Javascript bytebuffer implementation.
 
-_(Usable on NodeJS & Browser with tools like browserify ect...)_
+Can be used for WebSocket communication or whatever ! 👻
 
-## Using
+# Installation
+_It already contain types for TypeScript._
 ```
-npm init
+yarn add @holo5/ByteBuffer
+or
+npm install @holo5/ByteBuffer
 ```
 
+Configure your websocket for an easy integration:
+```
+var ws = new WebSocket("ws://my-ip:port");
 
-#### Let's go ?
-<img src="https://media.giphy.com/media/RrVzUOXldFe8M/source.gif">
+ws.binaryType = "arraybuffer"; // <--- HERE !
+```
+
+## Usage
+Coming soon <3
