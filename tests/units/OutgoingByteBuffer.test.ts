@@ -113,7 +113,7 @@ describe("[u] Outgoing ByteBuffer tests", () => {
         expect(outgoingByteBuffer.size).is.eq(14);
         expect(JSON.stringify(outgoingByteBuffer.data)).is.eq(JSON.stringify(
             [
-                {type: Types.STRING, value: "coucou"},
+                {type: Types.STRING, value: [99, 111, 117, 99, 111, 117]},
             ]
         ));
     });
