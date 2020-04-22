@@ -19,4 +19,4 @@ ws.binaryType = "arraybuffer"; // <--- HERE !
 ```
 
 ## Usage
-Coming soon <3
+Coming soon <3 <3
