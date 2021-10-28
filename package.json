@@ -15,7 +15,6 @@
     "typescript": "^3.8.3"
   },
   "directories": {
-    "example": "example",
     "test": "tests"
   }
 }
