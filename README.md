@@ -6,9 +6,7 @@ Can be used for WebSocket communication or whatever ! 👻
 # Installation
 _It already contain types for TypeScript._
 ```
-yarn add @holo5/ByteBuffer
-or
-npm install @holo5/ByteBuffer
+Changing the name... WIP
 ```
 
 Configure your websocket for an easy integration:
