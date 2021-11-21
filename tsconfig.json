@@ -11,7 +11,7 @@
     "declaration": true
   },
   "files": [
-    "src/index.ts"
+    "src/lightbuffer.ts"
   ],
   "exclude": [
     "node_modules",
@@ -21,7 +21,6 @@
   ],
   "rules": {
     "object-literal-sort-keys": false,
-    "quotemark": true,
     "semicolon": true,
     "array-type": [true, "array"],
     "arrow-return-shorthand": [true, "multiline"],

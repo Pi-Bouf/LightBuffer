@@ -5,7 +5,7 @@
     "prepublish": "npm run test && npm run build",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "build": "tsc",
-    "check": "tsc --noEmit",
+    "types-check": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts ./src --color"
   },
   "dependencies": {
