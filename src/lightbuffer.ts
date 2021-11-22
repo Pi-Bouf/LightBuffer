@@ -1,3 +1,5 @@
+import {TextDecoder} from './lib/TextDecoder';
+
 export class Lightbuffer {
     private dataView: DataView;
     private offset = 0;
@@ -11,69 +13,81 @@ export class Lightbuffer {
 
     public readByte(): number {
         const value = this.dataView.getInt8(this.offset);
-        console.log(value);
         this.offset += 1;
         return value;
     }
 
-    public readDouble(): number {
-        return 0;
-    }
-
-    public readFloat(): number {
-        return 0;
-    }
-
     public readInt(): number {
-        return 0;
+        const value = this.dataView.getInt8(this.offset);
+        this.offset += 2;
+        return value;
     }
 
     public readInt8(): number {
-        return 0;
+        const value = this.dataView.getInt8(this.offset);
+        this.offset += 1;
+        return value;
     }
 
     public readInt16(): number {
-        return 0;
+        const value = this.dataView.getInt16(this.offset);
+        this.offset += 2;
+        return value;
     }
 
     public readInt32(): number {
-        return 0;
+        const value = this.dataView.getInt32(this.offset);
+        this.offset += 4;
+        return value;
     }
 
-    public readInt64(): number {
-        return 0;
+    public readDouble(): number {
+        const value = this.dataView.getFloat64(this.offset);
+        this.offset += 4;
+        return value;
     }
 
-    public readLong(): number {
-        return 0;
+    public readFloat(): number {
+        const value = this.dataView.getFloat32(this.offset);
+        this.offset += 4;
+        return value;
     }
 
     public readShort(): number {
-        return 0;
+        return this.readInt8();
     }
 
     public readString(): string {
-        return "";
+        const size = this.readInt16();
+        let bytes = [];
+        for (let i = 0; i < size; i++) {
+            bytes.push(this.readUint8());
+        }
+
+        return TextDecoder(bytes);
     }
 
     public readChar(): string {
-        return "";
+        this.readInt16();
+        return TextDecoder([this.readUint8()]);
     }
 
     public readUint8(): number {
-        return 0;
+        const value = this.dataView.getUint8(this.offset);
+        this.offset += 1;
+        return value;
     }
 
     public readUint16(): number {
-        return 0;
+        const value = this.dataView.getUint16(this.offset);
+        this.offset += 1;
+        return value;
     }
 
     public readUint32(): number {
-        return 0;
-    }
-
-    public readUint64(): number {
-        return 0;
+        const value = this.dataView.getUint32(this.offset);
+        this.offset += 1;
+        return value;
     }
 
     public flip(): void {
