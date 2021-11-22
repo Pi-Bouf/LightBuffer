@@ -6,10 +6,14 @@ export class Lightbuffer {
         private arrayBuffer: ArrayBufferLike
     ) {
         this.dataView = new DataView(arrayBuffer);
+        this.offset = 0;
     }
 
     public readByte(): number {
-        return 0;
+        const value = this.dataView.getInt8(this.offset);
+        console.log(value);
+        this.offset += 1;
+        return value;
     }
 
     public readDouble(): number {
@@ -72,9 +76,9 @@ export class Lightbuffer {
         return 0;
     }
 
-
-
-
+    public flip(): void {
+        this.offset = 0;
+    }
 
     public static fromArrayBufferLike(arrayBuffer: ArrayBufferLike): Lightbuffer {
         return new Lightbuffer(arrayBuffer);
